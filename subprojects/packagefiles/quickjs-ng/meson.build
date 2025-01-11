@@ -1,4 +1,3 @@
-# DO not forget to update QJS_VERSION_MAJOR/QJS_VERSION_MINOR/QJS_VERSION_PATCH when upgrading version
 project('quickjs-ng', 'c', version: '0.8.0', default_options: ['c_std=c11'])
 
 
@@ -8,13 +7,6 @@ dep_threads = dependency('threads')
 deps = [dep_m, dep_threads]
 
 msvc_compat = cc.get_id() == 'msvc' or cc.get_id() == 'clang-cl'
-
-add_project_arguments(
-  '-DQJS_VERSION_MAJOR=0',
-  '-DQJS_VERSION_MINOR=8',
-  '-DQJS_VERSION_PATCH=0',
-  language: 'c',
-)
 
 add_project_arguments(
   cc.get_supported_arguments(
